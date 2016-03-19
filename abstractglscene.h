@@ -21,7 +21,7 @@ public:
     }
 
     virtual void paint() = 0;
-    virtual void initialize() = 0;
+    virtual void initialize();
 
 private:
     QOpenGLWindow *m_window = NULL;

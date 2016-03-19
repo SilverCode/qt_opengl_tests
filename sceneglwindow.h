@@ -2,6 +2,7 @@
 #define SCENEGLWINDOW_H
 
 #include "abstractglscene.h"
+#include <QOpenGLFunctions>
 
 class SceneGLWindow : public QOpenGLWindow
 {

@@ -1,8 +1,8 @@
 #include "sceneglwindow.h"
+#include <QOpenGLFunctions>
 
 SceneGLWindow::SceneGLWindow()
 {
-
 }
 
 void SceneGLWindow::initializeGL()

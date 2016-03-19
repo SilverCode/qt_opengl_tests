@@ -10,17 +10,19 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = Butter
 TEMPLATE = app
-
+CONFIG += c++11
 
 SOURCES += main.cpp\
         widget.cpp \
     glwindow.cpp \
     abstractglscene.cpp \
-    sceneglwindow.cpp
+    sceneglwindow.cpp \
+    mainscene.cpp
 
 HEADERS  += widget.h \
     glwindow.h \
     abstractglscene.h \
-    sceneglwindow.h
+    sceneglwindow.h \
+    mainscene.h
 
 FORMS    += widget.ui
