@@ -1,7 +1,9 @@
 #include "widget.h"
 #include <QApplication>
+#include <QPropertyAnimation>
 #include "sceneglwindow.h"
 #include "mainscene.h"
+
 
 int main(int argc, char *argv[])
 {
@@ -15,6 +17,13 @@ int main(int argc, char *argv[])
     scene.setTexture(QImage(":/images/crate.jpg"));
     window.resize(600, 600);
     window.show();
+
+    QPropertyAnimation anim(&scene, "angle");
+    anim.setStartValue(0);
+    anim.setEndValue(359);
+    anim.setDuration(5000);
+    anim.setLoopCount(-1);
+    anim.start();
 
     return a.exec();
 }

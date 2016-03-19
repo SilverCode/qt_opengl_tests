@@ -16,14 +16,20 @@ struct TexturedPoint {
     }
 };
 
-class MainScene : public AbstractGLScene
+class MainScene : public QObject, public AbstractGLScene
 {
+    Q_OBJECT
+
+    Q_PROPERTY(float angle READ angle WRITE setAngle)
+
 public:
     MainScene(QOpenGLWindow *window = 0);
     ~MainScene();
     void setTexture(QImage tex);
     void initialize();
     void paint();
+    void setAngle(float angle);
+    float angle() { return m_angle; }
 
 protected:
     void initializeTexture();
@@ -35,6 +41,10 @@ private:
     QOpenGLTexture *m_texture;
     bool m_initialized;
     QVector<TexturedPoint> m_data;
+    float m_angle;
+
+signals:
+    void angleChanged();
 };
 
 #endif // MAINSCENE_H

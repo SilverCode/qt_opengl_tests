@@ -36,13 +36,19 @@ void MainScene::paint()
     glViewport(0, 0, window()->width(), window()->height());
     glLoadIdentity();
 
-    glRotatef(45, 1.0, 0.0, 0.0);
-    glRotatef(45, 0.0, 1.0, 0.0);
+    glRotatef(m_angle, 1.0, 0.0, 0.0);
+    glRotatef(m_angle, 0.0, 1.0, 0.0);
 
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_CULL_FACE);
     glCullFace(GL_BACK);
     paintCube();
+}
+
+void MainScene::setAngle(float angle)
+{
+    m_angle = angle;
+    window()->update();
 }
 
 void MainScene::initializeTexture()
