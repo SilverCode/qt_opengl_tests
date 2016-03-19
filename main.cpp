@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
     window.setFormat(fmt);
     MainScene scene(&window);
     window.setScene(&scene);
-    scene.setTexture(QImage("/home/rsimpson/Development/Butter/images/crate.jpg"));
+    scene.setTexture(QImage(":/images/crate.jpg"));
     window.resize(600, 600);
     window.show();
 

@@ -26,3 +26,6 @@ HEADERS  += widget.h \
     mainscene.h
 
 FORMS    += widget.ui
+
+RESOURCES += \
+    textures.qrc
