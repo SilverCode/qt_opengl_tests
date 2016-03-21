@@ -17,15 +17,21 @@ SOURCES += main.cpp\
     glwindow.cpp \
     abstractglscene.cpp \
     sceneglwindow.cpp \
-    mainscene.cpp
+    scene_box.cpp \
+    scene_shader.cpp
 
 HEADERS  += widget.h \
     glwindow.h \
     abstractglscene.h \
     sceneglwindow.h \
-    mainscene.h
+    scene_box.h \
+    scene_shader.h
 
 FORMS    += widget.ui
 
 RESOURCES += \
     textures.qrc
+
+DISTFILES += \
+    phong.vert \
+    phong.frag

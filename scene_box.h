@@ -16,15 +16,15 @@ struct TexturedPoint {
     }
 };
 
-class MainScene : public QObject, public AbstractGLScene
+class SceneBox : public QObject, public AbstractGLScene
 {
     Q_OBJECT
 
     Q_PROPERTY(float angle READ angle WRITE setAngle)
 
 public:
-    MainScene(QOpenGLWindow *window = 0);
-    ~MainScene();
+    SceneBox(QOpenGLWindow *window = 0);
+    ~SceneBox();
     void setTexture(QImage tex);
     void initialize();
     void paint();

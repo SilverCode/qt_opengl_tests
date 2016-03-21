@@ -2,7 +2,8 @@
 #include <QApplication>
 #include <QPropertyAnimation>
 #include "sceneglwindow.h"
-#include "mainscene.h"
+#include "scene_box.h"
+#include "scene_shader.h"
 
 
 int main(int argc, char *argv[])
@@ -12,18 +13,21 @@ int main(int argc, char *argv[])
     QSurfaceFormat fmt;
     fmt.setSamples(16);
     window.setFormat(fmt);
-    MainScene scene(&window);
+
+    SceneShader scene(&window);
     window.setScene(&scene);
-    scene.setTexture(QImage(":/images/crate.jpg"));
+    //scene.setTexture(QImage(":/images/crate.jpg"));
     window.resize(600, 600);
     window.show();
 
+    /*
     QPropertyAnimation anim(&scene, "angle");
     anim.setStartValue(0);
     anim.setEndValue(359);
     anim.setDuration(5000);
     anim.setLoopCount(-1);
     anim.start();
+    */
 
     return a.exec();
 }

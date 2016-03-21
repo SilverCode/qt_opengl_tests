@@ -1,18 +1,18 @@
-#include "mainscene.h"
+#include "scene_box.h"
 
-MainScene::MainScene(QOpenGLWindow *window)
+SceneBox::SceneBox(QOpenGLWindow *window)
     : AbstractGLScene(window)
 {
     m_texture = 0;
     m_initialized = false;
 }
 
-MainScene::~MainScene()
+SceneBox::~SceneBox()
 {
     delete m_texture;
 }
 
-void MainScene::setTexture(QImage tex)
+void SceneBox::setTexture(QImage tex)
 {
     m_tex = tex;
 
@@ -20,7 +20,7 @@ void MainScene::setTexture(QImage tex)
         initializeTexture();
 }
 
-void MainScene::initialize()
+void SceneBox::initialize()
 {
     AbstractGLScene::initialize();
     m_initialized = true;
@@ -30,7 +30,7 @@ void MainScene::initialize()
     initializeCudeData();
 }
 
-void MainScene::paint()
+void SceneBox::paint()
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glViewport(0, 0, window()->width(), window()->height());
@@ -45,20 +45,20 @@ void MainScene::paint()
     paintCube();
 }
 
-void MainScene::setAngle(float angle)
+void SceneBox::setAngle(float angle)
 {
     m_angle = angle;
     window()->update();
 }
 
-void MainScene::initializeTexture()
+void SceneBox::initializeTexture()
 {
     m_texture = new QOpenGLTexture(m_tex.mirrored());
     m_texture->setMinificationFilter(QOpenGLTexture::LinearMipMapLinear);
     m_texture->setMagnificationFilter(QOpenGLTexture::Linear);
 }
 
-void MainScene::initializeCudeData()
+void SceneBox::initializeCudeData()
 {
     m_data = {
         //  Font Face
@@ -99,7 +99,7 @@ void MainScene::initializeCudeData()
     };
 }
 
-void MainScene::paintCube()
+void SceneBox::paintCube()
 {
    if (m_texture)
        m_texture->bind();

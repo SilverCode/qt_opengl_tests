@@ -1,5 +1,7 @@
 <RCC>
     <qresource prefix="/">
         <file>images/crate.jpg</file>
+        <file>phong.vert</file>
+        <file>phong.frag</file>
     </qresource>
 </RCC>
