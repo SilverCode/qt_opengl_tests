@@ -3,5 +3,7 @@
         <file>images/crate.jpg</file>
         <file>phong.vert</file>
         <file>phong.frag</file>
+        <file>image.frag</file>
+        <file>image.vert</file>
     </qresource>
 </RCC>

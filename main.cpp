@@ -2,9 +2,9 @@
 #include <QApplication>
 #include <QPropertyAnimation>
 #include "sceneglwindow.h"
-#include "scene_box.h"
-#include "scene_shader.h"
-
+//#include "scene_box.h"
+//#include "scene_shader.h"
+#include "scene_image.h"
 
 int main(int argc, char *argv[])
 {
@@ -14,18 +14,18 @@ int main(int argc, char *argv[])
     fmt.setSamples(16);
     window.setFormat(fmt);
 
-    SceneShader scene(&window);
+    SceneImage scene(&window);
     window.setScene(&scene);
     //scene.setTexture(QImage(":/images/crate.jpg"));
     window.resize(600, 600);
     window.show();
 
-    QPropertyAnimation anim(&scene, "angle");
-    anim.setStartValue(0);
-    anim.setEndValue(359);
-    anim.setDuration(5000);
-    anim.setLoopCount(-1);
-    anim.start();
+//    QPropertyAnimation anim(&scene, "angle");
+//    anim.setStartValue(0);
+//    anim.setEndValue(359);
+//    anim.setDuration(5000);
+//    anim.setLoopCount(-1);
+//    anim.start();
 
     return a.exec();
 }

@@ -18,14 +18,16 @@ SOURCES += main.cpp\
     abstractglscene.cpp \
     sceneglwindow.cpp \
     scene_box.cpp \
-    scene_shader.cpp
+    scene_shader.cpp \
+    scene_image.cpp
 
 HEADERS  += widget.h \
     glwindow.h \
     abstractglscene.h \
     sceneglwindow.h \
     scene_box.h \
-    scene_shader.h
+    scene_shader.h \
+    scene_image.h
 
 FORMS    += widget.ui
 
@@ -34,4 +36,6 @@ RESOURCES += \
 
 DISTFILES += \
     phong.vert \
-    phong.frag
+    phong.frag \
+    image.vert \
+    image.frag
