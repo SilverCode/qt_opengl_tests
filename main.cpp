@@ -20,14 +20,12 @@ int main(int argc, char *argv[])
     window.resize(600, 600);
     window.show();
 
-    /*
     QPropertyAnimation anim(&scene, "angle");
     anim.setStartValue(0);
     anim.setEndValue(359);
     anim.setDuration(5000);
     anim.setLoopCount(-1);
     anim.start();
-    */
 
     return a.exec();
 }

@@ -47,9 +47,15 @@ void SceneShader::paint()
     glCullFace(GL_BACK);
 
     m_modelMatrix.setToIdentity();
-    m_modelMatrix.rotate(45, 1, 1, 0);
+    m_modelMatrix.rotate(m_angle, 1, 1, 1);
     QMatrix4x4 modelViewMatrix = m_viewMatrix * m_modelMatrix;
     paintObject(modelViewMatrix);
+}
+
+void SceneShader::setAngle(float angle)
+{
+    m_angle = angle;
+    window()->update();
 }
 
 void SceneShader::initializeObjectData()

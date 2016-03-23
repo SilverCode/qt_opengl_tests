@@ -12,10 +12,14 @@ class SceneShader : public QObject, public AbstractGLScene
 {
     Q_OBJECT
 
+    Q_PROPERTY(float angle READ angle WRITE setAngle)
+
 public:
     SceneShader(SceneGLWindow *window);
     void initialize();
     void paint();
+    void setAngle(float angle);
+    float angle() { return m_angle; }
 
 protected:
     void initializeObjectData();
@@ -33,6 +37,7 @@ private:
     QMatrix4x4 m_viewMatrix;
     QMatrix4x4 m_projectionMatrix;
     QVector<ScenePoint> m_data;
+    float m_angle;
 
     QString fileContent(QString filename);
     void paintObject(const QMatrix4x4& mvMatrix);
